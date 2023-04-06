@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 
 export default defineConfig({
+    base: 'https://stormy-journey-05006.herokuapp.com/',
     plugins: [
         laravel({
             input: [
