@@ -1,3 +1,7 @@
+@section('title', $meta['title'])
+
+@section('metaDescription', $meta['description'])
+
 <x-home-layout>
 
     <article class="flex flex-col shadow">

@@ -5,13 +5,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
+        @hasSection('metaDescription')
+            <meta name="description" content="@yield('metaDescription')">
+        @else
+            <meta name="description" content="Stay up-to-date with the latest trends, tips, and tricks in coding with our expert articles and tutorials. Improve your coding skills and learn new technologies with our comprehensive guides.">
+        @endif
+
+        @if (isset($meta['title']))
+            <meta name="title" content="{{ $meta['title'] }}">
+        @else
+            <meta name="title" content="{{ config('app.name') }} - A blog about coding">
+        @endif
+
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
-        <!-- Scriptsd -->
+        <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans text-gray-900 antialiased bg-gray-100 bg-center dark:bg-dots-lighter bg-dots-darker dark:bg-gray-900 selection:bg-red-500 selection:text-white">

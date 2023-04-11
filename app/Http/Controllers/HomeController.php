@@ -15,14 +15,27 @@ class HomeController extends Controller
 
     public function show(string $id)
     {
+        $post = Post::findOrFail($id);
+        $meta = $this->generateMetaContent($post);
+
         return view('home.show', [
-            'post' => Post::findOrFail($id)
+            'post' => $post,
+            'meta' => $meta
         ]);
     }
 
     public function about()
     {
         return view('home.about');
+    }
+
+    public function generateMetaContent($post)
+    {
+        $meta = [
+            'title' => $post->title,
+            'description' => $post->excerpt
+        ];
+        return $meta;
     }
 }
 
