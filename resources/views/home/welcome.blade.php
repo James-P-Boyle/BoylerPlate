@@ -15,7 +15,7 @@
                     @foreach($post->tags as $tag)
                         <a
                             href="{{ route('blog.index', ['tag' => $tag->name]) }}"
-                            class="text-blue-700 text-md font-bold uppercase">
+                            class="text-green-700 text-md font-bold uppercase">
                             {{ $tag->name }}
                         </a>
                         @endforeach

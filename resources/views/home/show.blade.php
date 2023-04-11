@@ -14,7 +14,7 @@
                 @foreach($post->tags as $tag)
                     <a
                         href="{{ route('blog.index', ['tag' => $tag->name]) }}"
-                        class="text-blue-700 text-md font-bold uppercase transition-all"
+                        class="text-green-700 text-md font-bold uppercase transition-all"
                         tilte="View more {{ $tag->name }} posts"
                     >
                         {{ $tag->name }}
