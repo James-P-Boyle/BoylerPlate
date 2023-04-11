@@ -13,13 +13,14 @@ class PostsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    // public function index()
-    // {
-    //     $posts = Post::with('tags')
-    //     ->orderBy('updated_at', 'desc')
-    //     ->paginate(8);
-    //     return response()->json($posts);
-    // }
+    public function index()
+    {
+        $posts = Post::with('tags')
+            ->orderBy('updated_at', 'desc')
+            ->paginate(8);
+        return view('blog.index')
+            ->with('posts', $posts);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -101,7 +102,7 @@ class PostsController extends Controller
     {
         Post::destroy($id);
 
-        return redirect(route('blog.index'))->with('message', 'Post has been deleted');
+        return redirect(route('dashboard.index'))->with('message', 'Post has been deleted');
     }
 
     private function storeImage($request)
