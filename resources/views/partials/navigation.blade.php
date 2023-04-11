@@ -22,9 +22,6 @@
                         <x-nav-link :href="route('blog.create')" :active="request()->routeIs('blog.create')">
                             {{ __('Create') }}
                         </x-nav-link>
-                        <x-nav-link :href="route('blog.index')" :active="request()->routeIs('blog.index')">
-                            {{ __('Blog') }}
-                        </x-nav-link>
                     @endif
                                  {{-- show these if user is not auth --}}
                     <x-nav-link :href="route('home.about')" :active="request()->routeIs('home.about')">
@@ -95,9 +92,6 @@
                 </x-responsive-nav-link>
                 <x-responsive-nav-link :href="route('blog.create')" :active="request()->routeIs('blog.create')">
                     {{ __('Create') }}
-                </x-responsive-nav-link>
-                <x-responsive-nav-link :href="route('blog.index')" :active="request()->routeIs('blog.index')">
-                    {{ __('Blog') }}
                 </x-responsive-nav-link>
 
             </div>

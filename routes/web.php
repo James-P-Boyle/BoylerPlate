@@ -37,5 +37,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('blog', PostsController::class);
 });
 
+Route::fallback(function () {
+    return response()->view('errors.404', [], 404);
+});
 
 require __DIR__.'/auth.php';

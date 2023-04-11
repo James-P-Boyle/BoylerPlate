@@ -13,14 +13,13 @@ class PostsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        $posts = Post::with('tags')
-            ->orderBy('updated_at', 'desc')
-            ->paginate(8);
-        return view('blog.index')
-            ->with('posts', $posts);
-    }
+    // public function index()
+    // {
+    //     $posts = Post::with('tags')
+    //     ->orderBy('updated_at', 'desc')
+    //     ->paginate(8);
+    //     return response()->json($posts);
+    // }
 
     /**
      * Show the form for creating a new resource.
