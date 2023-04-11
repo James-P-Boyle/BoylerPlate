@@ -13,20 +13,22 @@
                 <div class="p-2 sm:p-4 lg:p-10 border-b">
 
                     <!-- show the tags for the post -->
-                    <div>
+                    {{-- <div>
                         @foreach($post->tags as $tag)
                             <a
                                 href="{{ route('blog.index', ['tag' => $tag->name]) }}"
-                                class="inline-block bg-red-300 w-20 rounded-full text-center text-lg font-semibold text-gray-700 mr-2 mb-2 hover:bg-gray-400 transition-all">
+                                class="inline-block bg-red-300 w-20 rounded-full text-center text-lg font-semibold text-gray-700 mr-2 mb-2 hover:bg-gray-400 transition-all"
+                                title="View more {{ $tag-name }} posts">
                                 {{ $tag->name }}
                             </a>
                         @endforeach
-                    </div>
+                    </div> --}}
 
                     <span>
                         <a
                             class="text-gray-900 text-2xl font-bold pt-6 pb-0 sm:pt-0 hover:text-gray-700 transition-all"
-                            href={{ route('blog.show', $post->id) }}>
+                            href="{{ route('home.show', $post->id) }}"
+                            title="View full Post">
                                 {{ $post->title }}
                         </a>
                     </span>
@@ -40,7 +42,8 @@
                             Made by:
                                 <a
                                     href=""
-                                    class="text-green-500 italic hover:text-green-400 transition-all">
+                                    class="text-green-500 italic hover:text-green-400 transition-all"
+                                    title="View more post from {{ $post->user->name }}">
                                     {{ $post->user->name }}
                                 </a>
                             on {{ $post->updated_at->format('d/m/y') }}
@@ -49,7 +52,9 @@
                         <div class="flex gap-2">
                             <a
                                 href="{{ route('blog.edit', $post->id) }}"
-                                class="text-base py-1 px-2 rounded-full transition-all border-2 border-gray-400 text-gray-400 hover:border-black hover:bg-green-400 hover:text-white hover:scale-105">
+                                class="text-base py-1 px-2 rounded-full transition-all border-2 border-gray-400 text-gray-400 hover:border-black hover:bg-green-400 hover:text-white hover:scale-105"
+                                title="Edit post"
+                                >
                                 Edit
                             </a>
 
@@ -57,7 +62,7 @@
                                 @csrf
                                 @method('DELETE')
 
-                                <button class="text-base py-1 px-2 rounded-full transition-all border-2 border-gray-400 text-gray-400 hover:border-black hover:bg-red-400 hover:text-white hover:scale-105">
+                                <button class="text-base py-1 px-2 rounded-full transition-all border-2 border-gray-400 text-gray-400 hover:border-black hover:bg-red-400 hover:text-white hover:scale-105" title="Delete this post">
                                     Delete
                                 </button>
                             </form>

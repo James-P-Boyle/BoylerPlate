@@ -32,7 +32,11 @@
 
             <header class="w-full container mx-auto dark:bg-gray-800 bg-white border-b">
                 <div class="flex flex-col items-center py-12">
-                    <a class="font-bold text-gray-800 dark:text-white uppercase hover:text-gray-700 text-5xl hover:scale-105 transition-all" href="#">
+                    <a
+                        class="font-bold text-gray-800 dark:text-white uppercase hover:text-gray-700 text-5xl hover:scale-105 transition-all"
+                        href="/"
+                        title="Homepage"
+                        >
                         The Boylerplate
                     </a>
                     <p class="text-lg text-gray-600 dark:text-gray-300">
@@ -56,7 +60,11 @@
                     <div class="w-full dark:bg-gray-800 bg-white shadow flex flex-col p-6">
                         <p class="text-xl font-semibold">About BoylerPlate</p>
                         <p class="pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis est eu odio sagittis tristique. Vestibulum ut finibus leo. In hac habitasse platea dictumst.</p>
-                        <a href="#" class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3">
+                        <a
+                            href={{ route('home.about') }}
+                            class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3"
+                            title="Go to about page"
+                        >
                             Get to know us
                         </a>
                     </div>
@@ -68,8 +76,12 @@
 
                     <div class="w-full dark:bg-gray-800 bg-white shadow flex flex-col p-6">
                         <p class="text-xl font-semibold pb-5">Follow the Boyle</p>
-                        <a href="#" class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3">
-                            <i class="fab fa-instagram mr-2"></i> Follow @James
+                        <a
+                            href="#"
+                            class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3"
+                            title="Go to my Linkedin"
+                        >
+                            Follow @James
                         </a>
                     </div>
 
@@ -81,10 +93,16 @@
 
                 <div class="w-full mx-auto flex flex-col items-center">
                     <div class="flex flex-col md:flex-row text-center md:text-left md:justify-between py-6">
-                        <a href={{ route('home.about') }} class="uppercase px-3">About Us</a>
-                        <a href="#" class="uppercase px-3">Privacy Policy</a>
-                        <a href="#" class="uppercase px-3">Terms & Conditions</a>
-                        <a href="#" class="uppercase px-3">Contact Us</a>
+                        <a
+                            href={{ route('home.about') }}
+                            class="uppercase px-3"
+                            title="Go to about page"
+                        >
+                            About Us
+                        </a>
+                        <span href="#" class="uppercase px-3">Privacy Policy</span>
+                        <span href="#" class="uppercase px-3">Terms & Conditions</span>
+                        <span href="#" class="uppercase px-3">Contact Us</span>
                     </div>
                     <div class="uppercase pb-6">&copy; BOYLERPLATE</div>
                 </div>

@@ -2,32 +2,39 @@
 
     <article class="flex flex-col shadow">
         <!-- Article Image -->
-        <a href="#" class="hover:opacity-75">
+        <div class="hover:opacity-75">
             <img class="mx-auto" src="https://source.unsplash.com/collection/1346951/1000x500?sig=1">
-        </a>
+        </div>
         <div class="flex flex-col gap-2 justify-start p-6 dark:bg-gray-800 bg-white">
             <div class="flex gap-2">
                 @foreach($post->tags as $tag)
                     <a
                         href="{{ route('blog.index', ['tag' => $tag->name]) }}"
-                        class="text-blue-700 text-md font-bold uppercase transition-all">
+                        class="text-blue-700 text-md font-bold uppercase transition-all"
+                        tilte="View more {{ $tag->name }} posts"
+                    >
                         {{ $tag->name }}
                     </a>
                 @endforeach
             </div>
 
-            <h1 href="#" class="text-3xl font-bold">{{ $post->title }}</h1>
+            <h1 class="text-3xl font-bold">{{ $post->title }}</h1>
 
-            <p href="#" class="text-sm">
-                By <a href="#" class="font-semibold hover:text-gray-800">{{ $post->user->name }}</a>, Published on {{ $post->created_at }}
+            <p class="text-sm">
+                By <a
+                        href=""
+                        class="text-green-500 italic hover:text-green-400 transition-all"
+                        title="View more posts from {{ $post->user->name }}"
+                    >
+                        {{ $post->user->name }}
+                    </a>, Published on {{ $post->created_at }}
             </p>
 
-            <h2 href="#" class="text-2xl italic">{{ $post->excerpt }}</h2>
+            <h2 class="text-2xl italic">{{ $post->excerpt }}</h2>
 
             <div>
                 {!! $post->body !!}
             </div>
-
 
         </div>
     </article>
