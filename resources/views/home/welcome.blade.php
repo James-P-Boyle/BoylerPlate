@@ -24,7 +24,12 @@
                 </div>
 
 
-                <p class="text-3xl font-bold hover:text-gray-700">{{ $post->title }}</p>
+                <a
+                    class="text-3xl font-bold hover:text-gray-200"
+                    href="{{ route('home.show', $post->id) }}"
+                >
+                    {{ $post->title }}
+                </a>
 
                 <p class="text-xl">{{ $post->excerpt }}</p>
                 <p class="text-md">
@@ -37,7 +42,7 @@
                         </a>, Published on {{ $post->created_at }}
                 </p>
                 <div class="relative">
-                    {!! Str::limit($post->body, 1200) !!}
+                    <p>{!! Str::limit($post->body, 800) !!}</p>
                     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white dark:to-gray-800"></div>
                     <a
                         href="{{ route('home.show', $post->id) }}"
