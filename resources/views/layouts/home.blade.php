@@ -30,7 +30,7 @@
 
             @include('partials.header')
 
-            <div class="xl:container mx-auto flex flex-wrap gap-4 py-6">
+            <div class="xl:container lg:mx-4 xl:mx-auto flex flex-wrap gap-4 py-6">
 
                 {{-- Content --}}
                 <section class="flex flex-col flex-1 gap-4 items-center text-gray-700 dark:text-white">

@@ -7,7 +7,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis est eu odio sagittis tristique. Vestibulum ut finibus leo. In hac habitasse platea dictumst.</p>
             <a
                 href={{ route('home.about') }}
-                class="w-full bg-green-800 text-white font-bold text-sm uppercase rounded hover:bg-green-700 flex items-center justify-center px-2 py-3"
+                class="w-full bg-green-800 text-white font-bold text-sm uppercase rounded flex items-center justify-center px-2 py-3 hover:bg-green-700 hover:scale-x-105 transition-all"
                 title="Go to about page"
             >
                 Get to know us
@@ -23,7 +23,7 @@
             <a
                 href="https://www.linkedin.com/in/james-p-boyle"
                 target="_blank"
-                class="w-full bg-green-800 text-white font-bold text-sm uppercase rounded hover:bg-green-700 flex items-center justify-center px-2 py-3"
+                class="w-full bg-green-800 text-white font-bold text-sm uppercase rounded flex items-center justify-center px-2 py-3 hover:bg-green-700 hover:scale-x-105 transition-all "
                 title="Go to my Linkedin"
             >
                 Follow @LinkedIn
@@ -31,7 +31,7 @@
             <a
                 href="https://github.com/James-P-Boyle"
                 target="_blank"
-                class="w-full bg-green-800 text-white font-bold text-sm uppercase rounded hover:bg-green-700 flex items-center justify-center px-2 py-3"
+                class="w-full bg-green-800 text-white font-bold text-sm uppercase rounded flex items-center justify-center px-2 py-3 hover:bg-green-700 hover:scale-x-105 transition-all"
                 title="Go to my Linkedin"
             >
                 Follow @Github
