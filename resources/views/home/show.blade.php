@@ -4,9 +4,11 @@
         <!-- Article Image -->
         <div class="hover:opacity-75">
             <img
-                class="mx-auto"
-                title={{ $post->title }}
+                class="mx-auto "
+                title="{{ $post->title }}"
                 src="https://source.unsplash.com/collection/1346951/1000x500?sig=1"
+                height="500"
+                width="1000"
             >
         </div>
         <div class="flex flex-col gap-2 justify-start p-6 dark:bg-gray-800 bg-white">

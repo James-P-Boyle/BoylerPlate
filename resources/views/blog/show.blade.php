@@ -12,7 +12,7 @@
             <img
                 class="h-10 w-10"
                 src="{{ asset('storage/' . $post->image_path) }}"
-                title={{ $post->title }}
+                title="{{ $post->title }}"
             >
         </div>
         <div class="bg-white flex flex-col justify-start p-6">
