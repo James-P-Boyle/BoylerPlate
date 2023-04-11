@@ -100,9 +100,9 @@
                         >
                             About Us
                         </a>
-                        <span href="#" class="uppercase px-3">Privacy Policy</span>
-                        <span href="#" class="uppercase px-3">Terms & Conditions</span>
-                        <span href="#" class="uppercase px-3">Contact Us</span>
+                        <span class="uppercase px-3">Privacy Policy</span>
+                        <span class="uppercase px-3">Terms & Conditions</span>
+                        <span class="uppercase px-3">Contact Us</span>
                     </div>
                     <div class="uppercase pb-6">&copy; BOYLERPLATE</div>
                 </div>

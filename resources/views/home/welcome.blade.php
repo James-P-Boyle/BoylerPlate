@@ -3,9 +3,12 @@
     @foreach ($posts as $post)
         <article class="flex flex-col shadow">
             <!-- Article Image -->
-            <a href="#" class="hover:opacity-75">
-                <img src="https://source.unsplash.com/collection/1346951/1000x500?sig=1">
-            </a>
+            <div class="hover:opacity-75">
+                <img
+                    src="https://source.unsplash.com/collection/1346951/1000x500?sig=1"
+                    title={{ $post->title }}
+                >
+            </div>
             <div class="bg-white dark:bg-gray-800 flex flex-col gap-2 justify-start p-6">
 
                 <div class="flex flex-row gap-2">

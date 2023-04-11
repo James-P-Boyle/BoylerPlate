@@ -8,10 +8,13 @@
 
     <article class="flex flex-col shadow my-4">
         <!-- Article Image -->
-        <a href="#" class="hover:opacity-75">
-
-            <img class="h-10 w-10" src="{{ asset('storage/' . $post->image_path) }}">
-        </a>
+        <div class="hover:opacity-75">
+            <img
+                class="h-10 w-10"
+                src="{{ asset('storage/' . $post->image_path) }}"
+                title={{ $post->title }}
+            >
+        </div>
         <div class="bg-white flex flex-col justify-start p-6">
             <div>
                 @foreach($post->tags as $tag)
