@@ -28,7 +28,7 @@
 
             <p class="text-sm">
                 By <a
-                        href=""
+                        href="/"
                         class="text-green-500 italic hover:text-green-400 transition-all"
                         title="View more posts from {{ $post->user->name }}"
                     >

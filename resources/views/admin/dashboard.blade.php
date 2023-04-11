@@ -41,7 +41,7 @@
                         <span class="text-gray-500">
                             Made by:
                                 <a
-                                    href=""
+                                    href="/"
                                     class="text-green-500 italic hover:text-green-400 transition-all"
                                     title="View more post from {{ $post->user->name }}">
                                     {{ $post->user->name }}
