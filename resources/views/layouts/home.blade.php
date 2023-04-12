@@ -4,7 +4,7 @@
 
     @include('partials.navigation')
 
-    <div class="flex flex-col sm:justify-center items-center mx-auto">
+    <div class="flex flex-col sm:justify-center items-center mx-auto max-w-[100vw]">
 
         <x-header />
 
