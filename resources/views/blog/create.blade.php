@@ -25,6 +25,7 @@
                         type="checkbox"
                         class="text-xl"
                         name="is_published"
+                        value="1"
                     >
                 </div>
 
@@ -80,18 +81,31 @@
                     placeholder="Body..."
                     rows="6"
                     class="px-2 bg-transparent text-left text-xl border rounded-lg"
-                >
-                    {{ old('body') }}
-                </textarea>
+                >{{ old('body') }}</textarea>
 
 
                 @error('body')
                     <div class="text-red-500 text-sm">{{ $message }}</div>
                 @enderror
 
+                <input
+                    type="text"
+                    name="meta_title"
+                    placeholder="Optional Meta Title ?"
+                    value="{{ old('meta_title') }}"
+                    class="border-b rounded-lg px-2 bg-transparent text-xl"
+                >
+
+                <textarea
+                    name="meta_description"
+                    placeholder="Optional Meta Description ?"
+                    rows="2"
+                    class="px-2 bg-transparent text-left text-xl border rounded-lg"
+                >{{ old('meta_description') }}</textarea>
+
                 <div class="border rounded-lg p-3">
                     <label class="flex flex-col items-start gap-2 rounded-lg cursor-pointer">
-                        <span class="mt-2 text-gray-500 text-xl">
+                        <span class="text-gray-500 text-xl">
                             Select a file
                         </span>
                         <input

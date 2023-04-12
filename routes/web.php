@@ -23,9 +23,9 @@ Route::get('/post/{id}', [HomeController::class, 'show'])->name('home.show');
 Route::get('/about', [HomeController::class, 'about'])->name('home.about');
 
 
-Route::get('/admin', function () {
-    Route::get('/dashboard', [DashboardController::class, 'show'])->name('dashboard.index');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/admin', function () {
+//     Route::get('/dashboard', [DashboardController::class, 'show'])->name('dashboard.index');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');

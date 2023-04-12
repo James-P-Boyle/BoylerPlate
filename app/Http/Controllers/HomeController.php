@@ -9,6 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
+
         $posts = Post::where('is_published', true)->orderBy('updated_at', 'desc')->paginate(8);
         return view('home.welcome')->with('posts', $posts);
     }
@@ -16,7 +17,8 @@ class HomeController extends Controller
     public function show(string $id)
     {
         $post = Post::findOrFail($id);
-        $meta = $this->generateMetaContent($post);
+        // dd($post->metaData);
+        $meta = $this->getMeta($post);
 
         return view('home.show', [
             'post' => $post,
@@ -29,21 +31,21 @@ class HomeController extends Controller
         return view('home.about');
     }
 
-    public function generateMetaContent($post)
+    public function getMeta(Post $post)
     {
         $meta = [
             'title' => $post->title,
             'description' => $post->excerpt
         ];
+
+        $metaData = $post->metaData;
+
+        if ($metaData && $metaData->meta_title && $metaData->meta_description) {
+            $meta['title'] = $metaData->meta_title;
+            $meta['description'] = $metaData->meta_description;
+        }
+
         return $meta;
     }
 }
 
-/*
-    public function show(string $id)
-    {
-        return view('blog.show', [
-            'post' => Post::findOrFail($id)
-        ]);
-    }
-*/

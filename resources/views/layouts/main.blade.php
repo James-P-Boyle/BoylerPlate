@@ -11,8 +11,8 @@
             <meta name="description" content="Stay up-to-date with the latest trends, tips, and tricks in coding with our expert articles and tutorials. Improve your coding skills and learn new technologies with our comprehensive guides.">
         @endif
 
-        @if (isset($meta['title']))
-            <meta name="title" content="{{ $meta['title'] }}">
+        @hasSection('title')
+            <meta name="title" content="@yield('title')">
         @else
             <meta name="title" content="{{ config('app.name') }} - A blog about coding">
         @endif

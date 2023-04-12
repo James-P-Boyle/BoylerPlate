@@ -7,7 +7,7 @@
                 <div class="shrink-0 flex items-center">
                     <a
                         title="Go to dashboard"
-                        href="{{ route('dashboard') }}">
+                        href="{{ route('dashboard.index') }}">
                         <x-application-logo class="" />
                     </a>
                 </div>

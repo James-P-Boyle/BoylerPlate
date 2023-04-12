@@ -21,7 +21,7 @@ return new class extends Migration
             $table->text('body');
             $table->integer('min_to_read')->default(1);
             $table->string('image_path');
-            $table->boolean('is_published');
+            $table->boolean('is_published')->default(false);
             // user id references to id on the users table
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tag;
 use App\Models\Post;
+use App\Models\Metadata;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
 use App\Http\Requests\PostFormRequest;
-use App\Models\Tag;
 
 class PostsController extends Controller
 {
@@ -35,23 +37,30 @@ class PostsController extends Controller
      */
     public function store(PostFormRequest $request)
     {
+        DB::beginTransaction();
+
         $request->validated();
 
-        $post = Post::create([
-            'title'=> $request->title,
-            'excerpt' => $request->excerpt,
-            'body' => $request->body,
-            'image_path' => $this->storeImage($request),
-            'is_published' => $request->is_published === 'on',
-            'min_to_read' => $request->min_to_read,
-            'user_id' => auth()->user()->id
-        ]);
+        $post = Post::create(array_merge($request->all(), [
+            'user_id' => auth()->user()->id,
+            'image_path' => $this->storeImage($request)
+        ]));
+
+        if ($request->filled('meta_title') || $request->filled('meta_description')) {
+            $post->metaData()->save(new MetaData([
+                'meta_title' => $request->meta_title,
+                'meta_description' => $request->meta_description
+            ]));
+        }
 
         $tags = explode(',', $request->tags);
+
         foreach ($tags as $tagName) {
             $tag = Tag::firstOrCreate(['name' => $tagName]);
             $post->tags()->attach($tag->id);
         }
+
+        DB::commit();
 
         return redirect(route('blog.index'));
     }
@@ -81,18 +90,24 @@ class PostsController extends Controller
      */
     public function update(PostFormRequest $request, string $id)
     {
+        dd($request->all());
         $request->validated();
 
         Post::where('id', $id)->update($request->except([
             '_token', 'method'
         ]));
 
+        MetaData::where('post_id', $id)->update([
+            'meta_title' => $request->meta_title,
+            'meta_description' => $request->meta_description
+        ]);
+
         // foreach ($post->tags as $tagName) {
         //     $tag = Tag::firstOrCreate(['name' => $tagName]);
         //     $post->tags()->attach($tag->id);
         // }
 
-        return redirect(route('blog.index'));
+        return redirect(route('dashboard.index'));
     }
 
     /**

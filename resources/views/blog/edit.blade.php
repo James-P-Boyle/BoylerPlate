@@ -43,20 +43,12 @@
                             class="p-1 bg-transparent text-xl border-b rounded-lg px-2"
                         >
 
-                        @error('title')
-                            <div class="text-red-500 text-sm">{{ $message }}</div>
-                        @enderror
-
                         <input
                             type="text"
                             name="excerpt"
                             value="{{ $post->excerpt }}"
                             class="p-1 bg-transparent text-xl border-b rounded-lg px-2"
                         >
-
-                        @error('excerpt')
-                            <div class="text-red-500 text-sm">{{ $message }}</div>
-                        @enderror
 
                         <input
                             type="number"
@@ -65,26 +57,28 @@
                             class="p-1 bg-transparent text-xl border-b rounded-lg px-2"
                         >
 
-                        @error('min_to_read')
-                            <div class="text-red-500 text-sm">{{ $message }}</div>
-                        @enderror
-
                         <textarea
                             name="body"
                             rows="15"
                             class="p-1 bg-transparent text-xl border-b rounded-lg px-2 h-full"
+                        >{{ $post->body }}</textarea>
+
+                        <input
+                            type="text"
+                            name="meta_title"
+                            value="{{ $post->metaData->meta_title }}"
+                            class="border-b rounded-lg px-2 bg-transparent text-xl"
                         >
-                            {{ $post->body }}
-                        </textarea>
 
-
-                        @error('body')
-                            <div class="text-red-500 text-sm">{{ $message }}</div>
-                        @enderror
+                        <textarea
+                            name="meta_description"
+                            rows="2"
+                            class="px-2 bg-transparent text-left text-xl border rounded-lg"
+                        >{{ $post->metaData->meta_description }}</textarea>
 
                         <div class="border rounded-lg p-3">
                             <label class="flex flex-col items-start gap-2 rounded-lg cursor-pointer">
-                                <span class="mt-2 text-gray-500 text-xl">
+                                <span class="text-gray-500 text-xl">
                                     Select a file
                                 </span>
                                 <input
