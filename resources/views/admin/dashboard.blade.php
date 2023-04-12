@@ -8,10 +8,10 @@
 
         @if(session()->has('message'))
             <div class="mx-auto py-2 my-2">
-                <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">
+                <div class="bg-ci-red text-white font-bold rounded-t px-4 py-2">
                     Warning
                 </div>
-                <div class="border-2 border-red-500 border-t-0 text-red-500 font-bold rounded-b px-4 py-2">
+                <div class="border-2 border-ci-red border-t-0 text-ci-red font-bold rounded-b px-4 py-2">
                     {{ session()->get('message') }}
                 </div>
             </div>
@@ -28,7 +28,7 @@
                         @foreach($post->tags as $tag)
                             <a
                                 href="{{ route('blog.index', ['tag' => $tag->name]) }}"
-                                class="inline-block bg-red-300 w-20 rounded-full text-center text-lg font-semibold text-gray-700 mr-2 mb-2 hover:bg-gray-400 transition-all"
+                                class="inline-block bg-ci-red w-20 rounded-full text-center text-lg font-semibold text-gray-700 mr-2 mb-2 hover:bg-gray-400 transition-all"
                                 title="View more {{ $tag-name }} posts">
                                 {{ $tag->name }}
                             </a>
@@ -53,7 +53,7 @@
                             Made by:
                                 <a
                                     href="/"
-                                    class="text-green-500 italic hover:text-green-400 transition-all"
+                                    class="text-ci-yellow italic hover:text-ci-yellow transition-all"
                                     title="View more post from {{ $post->user->name }}">
                                     {{ $post->user->name }}
                                 </a>
@@ -63,7 +63,7 @@
                         <div class="flex gap-2">
                             <a
                                 href="{{ route('blog.edit', $post->id) }}"
-                                class="text-base py-1 px-2 rounded-full transition-all border-2 border-gray-400 text-gray-400 hover:border-black hover:bg-green-400 hover:text-white hover:scale-105"
+                                class="text-base py-1 px-2 rounded-full transition-all border-2 border-gray-400 text-gray-400 hover:border-black hover:bg-ci-yellow hover:text-white hover:scale-105"
                                 title="Edit post"
                                 >
                                 Edit
@@ -73,7 +73,7 @@
                                 @csrf
                                 @method('DELETE')
 
-                                <button class="text-base py-1 px-2 rounded-full transition-all border-2 border-gray-400 text-gray-400 hover:border-black hover:bg-red-400 hover:text-white hover:scale-105" title="Delete this post">
+                                <button class="text-base py-1 px-2 rounded-full transition-all border-2 border-gray-400 text-gray-400 hover:border-black hover:bg-ci-red hover:text-white hover:scale-105" title="Delete this post">
                                     Delete
                                 </button>
                             </form>

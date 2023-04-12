@@ -8,7 +8,7 @@
             The Boylerplate
         </a>
         <p class="text-lg text-gray-600 dark:text-gray-300">
-            Learn from the Boyle himself
+            Learn from <span class="bg-ci-red p-1">the Boyle </span> himself
         </p>
     </div>
 </header>

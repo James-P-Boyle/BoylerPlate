@@ -20,7 +20,7 @@
                                 @foreach($post->tags as $tag)
                                     <a
                                         href="{{ route('blog.index', ['tag' => $tag->name]) }}"
-                                        class="inline-block bg-red-300 w-20 rounded-full text-center text-lg font-semibold text-gray-700 mr-2 mb-2 hover:bg-gray-400 transition-all"
+                                        class="inline-block bg-ci-red w-20 rounded-full text-center text-lg font-semibold text-ci-torquoise mr-2 mb-2 hover:bg-gray-400 transition-all"
                                         title="View more posts about {{ $tag->name }}"
                                     >
                                         {{ $tag->name }}
@@ -47,7 +47,7 @@
                                     Made by:
                                         <a
                                             href=""
-                                            class="text-green-500 italic hover:text-green-400 transition-all"
+                                            class="text-ci-yellow italic hover:text-ci-yellow transition-all"
                                             title="View more posts ffo"
                                         >
                                             {{ $post->user->name }}

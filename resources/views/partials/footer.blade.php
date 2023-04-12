@@ -13,7 +13,7 @@
             <span class="uppercase px-3">Terms & Conditions</span>
             <span class="uppercase px-3">Contact Us</span>
         </div>
-        <div class="font-bold uppercase pb-6 text-red-700">&copy; BOYLERPLATE</div>
+        <div class="font-bold uppercase pb-6 text-ci-red">&copy; BOYLERPLATE</div>
     </div>
 
 </footer>

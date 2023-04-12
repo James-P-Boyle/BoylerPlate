@@ -38,7 +38,7 @@
                     class="border-b rounded-lg px-2 bg-transparent text-xl"
                 >
                 @error('tags')
-                    <div class="text-red-500 text-sm">{{ $message }}</div>
+                    <div class="text-ci-red text-sm">{{ $message }}</div>
                 @enderror
 
                 <input
@@ -49,7 +49,7 @@
                     class="border-b rounded-lg px-2 bg-transparent text-xl"
                 >
                 @error('title')
-                    <div class="text-red-500 text-sm">{{ $message }}</div>
+                    <div class="text-ci-red text-sm">{{ $message }}</div>
                 @enderror
 
                 <input
@@ -61,7 +61,7 @@
                 >
 
                 @error('excerpt')
-                    <div class="text-red-500 text-sm">{{ $message }}</div>
+                    <div class="text-ci-red text-sm">{{ $message }}</div>
                 @enderror
 
                 <input
@@ -73,7 +73,7 @@
                 >
 
                 @error('min_to_read')
-                    <div class="text-red-500 text-sm">{{ $message }}</div>
+                    <div class="text-ci-red text-sm">{{ $message }}</div>
                 @enderror
 
                 <textarea
@@ -85,7 +85,7 @@
 
 
                 @error('body')
-                    <div class="text-red-500 text-sm">{{ $message }}</div>
+                    <div class="text-ci-red text-sm">{{ $message }}</div>
                 @enderror
 
                 <input
@@ -117,7 +117,7 @@
 
                 <button
                     type="submit"
-                    class="bg-green-500 text-white text-lg font-bold py-4 rounded-lg hover:bg-green-400 transition-colors">
+                    class="bg-ci-yellow text-white text-lg font-bold py-4 rounded-lg hover:bg-ci-yellow transition-colors">
                     Submit Post
                 </button>
             </form>

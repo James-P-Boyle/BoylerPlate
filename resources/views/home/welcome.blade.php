@@ -17,7 +17,7 @@
                     @foreach($post->tags as $tag)
                         <a
                             href="{{ route('blog.index', ['tag' => $tag->name]) }}"
-                            class="text-red-700 text-lg font-bold uppercase py-1 px-2 rounded-full hover:scale-105 transition-all bg-gray-100 dark:bg-gray-900">
+                            class="text-ci-red text-lg font-bold uppercase rounded-full hover:scale-105 transition-all">
                             {{ $tag->name }}
                         </a>
                         @endforeach
@@ -34,7 +34,7 @@
                 <p class="text-md">
                     By <a
                             href="/"
-                            class="text-red-500 italic hover:text-red-400 transition-all"
+                            class="text-ci-yellow italic hover:text-ci-yellow transition-all"
                             title="View more posts from {{ $post->user->name }}"
                         >
                             {{ $post->user->name }}
@@ -45,7 +45,7 @@
                     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white dark:to-gray-800"></div>
                     <a
                         href="{{ route('home.show', $post->id) }}"
-                        class="text-center uppercase border py-2 px-4 rounded-md drop-shadow-lg dark:text-gray-800 text-white absolute bottom-0 right-0 left-0 bg-green-800 dark:bg-gray-900 hover:scale-105 transition-all"
+                        class="text-center uppercase font-bold border-r border-b-2 border-ci-yellow py-2 rounded-md text-gray-800 dark:text-white absolute bottom-0 right-0 left-0 bg-ci-yellow dark:bg-gray-900/90 hover:scale-105 transition-all drop-shadow-lg"
                         title="view full post"
                     >
                         Continue Reading

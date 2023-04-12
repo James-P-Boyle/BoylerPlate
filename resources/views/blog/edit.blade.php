@@ -31,7 +31,7 @@
                                     type="text"
                                     name="tags"
                                     value="{{ $tag->name }}"
-                                    class="inline-block bg-red-300 w-20 rounded-full text-center text-lg font-semibold text-gray-700 mr-2 mb-2 hover:bg-gray-400 transition-all"
+                                    class="inline-block bg-ci-red w-20 rounded-full text-center text-lg font-semibold text-gray-700 mr-2 mb-2 hover:bg-gray-400 transition-all"
                                 />
                             @endforeach
                         </div> --}}
@@ -90,7 +90,7 @@
 
                         <button
                             type="submit"
-                            class="bg-green-500 text-white text-md font-bold py-4 rounded-lg hover:bg-green-400 transition-colors">
+                            class="bg-ci-yellow text-white text-md font-bold py-4 rounded-lg hover:bg-ci-yellow transition-colors">
                             Submit Post
                         </button>
                     </form>

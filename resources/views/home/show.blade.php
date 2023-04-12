@@ -20,7 +20,7 @@
                 @foreach($post->tags as $tag)
                     <a
                         href="{{ route('blog.index', ['tag' => $tag->name]) }}"
-                        class="text-green-700 text-md font-bold uppercase transition-all"
+                        class="text-ci-red text-md font-bold uppercase transition-all"
                         tilte="View more {{ $tag->name }} posts"
                     >
                         {{ $tag->name }}
@@ -30,14 +30,14 @@
 
             <h1 class="text-3xl font-bold">{{ $post->title }}</h1>
 
-            <p class="text-sm">
+            <p class="text-md">
                 By <a
                         href="/"
-                        class="text-green-500 italic hover:text-green-400 transition-all"
+                        class="text-ci-yellow italic hover:text-ci-yellow transition-all font-bold"
                         title="View more posts from {{ $post->user->name }}"
                     >
-                        {{ $post->user->name }}
-                    </a>, Published on {{ $post->created_at }}
+                        {{ Str::title($post->user->name) }}
+                    </a>, {{ date('Y-m-d', strtotime($post->created_at)) }}
             </p>
 
             <h2 class="text-2xl italic">{{ $post->excerpt }}</h2>
