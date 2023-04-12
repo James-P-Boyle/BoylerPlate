@@ -9,8 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-
-        $posts = Post::where('is_published', true)->orderBy('updated_at', 'desc')->paginate(8);
+        $posts = Post::forPublicIndex()->paginate(8);
         return view('home.welcome')->with('posts', $posts);
     }
 

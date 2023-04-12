@@ -4,6 +4,8 @@
 
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
+
+
         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-4 text-gray-900 dark:text-gray-100">
                 <div class="mt-4">
@@ -15,6 +17,10 @@
                         @csrf
                         @method('PATCH')
 
+                        {{-- {{ var_dump($errors) }} --}}
+
+                        {{--  --}}
+
                         <div class="">
                             <label for="is_published">Is published</label>
                             <input
@@ -25,7 +31,7 @@
                             >
                         </div>
 
-                        {{-- <div>
+                        <div>
                             @foreach($post->tags as $tag)
                                 <input
                                     type="text"
@@ -34,7 +40,7 @@
                                     class="inline-block bg-ci-red w-20 rounded-full text-center text-lg font-semibold text-gray-700 mr-2 mb-2 hover:bg-gray-400 transition-all"
                                 />
                             @endforeach
-                        </div> --}}
+                        </div>
 
                         <input
                             type="text"

@@ -17,8 +17,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Post::with('tags')
-            ->orderBy('updated_at', 'desc')
+        $posts = Post::forPublicIndex()
             ->paginate(8);
         return view('blog.index')
             ->with('posts', $posts);
@@ -38,8 +37,6 @@ class PostsController extends Controller
     public function store(PostFormRequest $request)
     {
         DB::beginTransaction();
-
-        $request->validated();
 
         $post = Post::create(array_merge($request->all(), [
             'user_id' => auth()->user()->id,
@@ -90,17 +87,18 @@ class PostsController extends Controller
      */
     public function update(PostFormRequest $request, string $id)
     {
-        dd($request->all());
-        $request->validated();
+        // dd($request->all());
 
-        Post::where('id', $id)->update($request->except([
-            '_token', 'method'
-        ]));
+        $post = Post::findOrFail($id);
 
-        MetaData::where('post_id', $id)->update([
+        $post->update($request->all());
+
+        $post->metaData->update($request->all());
+
+        /*MetaData::where('post_id', $id)->update([
             'meta_title' => $request->meta_title,
             'meta_description' => $request->meta_description
-        ]);
+        ]);*/
 
         // foreach ($post->tags as $tagName) {
         //     $tag = Tag::firstOrCreate(['name' => $tagName]);

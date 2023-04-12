@@ -16,6 +16,17 @@ class Post extends Model
         'title', 'excerpt', 'body', 'image_path', 'is_published', 'min_to_read', 'user_id'
     ];
 
+    public static function boot(): void
+    {
+        parent::boot();
+
+        static::updated(function (Post $post) {
+            logger('Post ' . $post->id . ' was updated.');
+            //mail me about that
+        });
+    }
+
+
     public function user()
     {
        return $this->belongsTo(User::class);
@@ -29,5 +40,19 @@ class Post extends Model
     public function metaData(): HasOne
     {
         return $this->hasOne(MetaData::class);
+    }
+
+
+    public function scopePublished($query)
+    {
+        return $query->where('is_published', true);
+    }
+
+
+    public function scopeForPublicIndex($query)
+    {
+        return $query->with('tags')
+            ->published()
+            ->orderBy('updated_at', 'desc');
     }
 }

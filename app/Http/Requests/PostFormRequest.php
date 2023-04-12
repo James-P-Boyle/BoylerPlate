@@ -41,3 +41,8 @@ class PostFormRequest extends FormRequest
         return $rules;
     }
 }
+
+/* storePostREQUEST */
+/* UPDATEPostREQUEST */
+
+/* SAVEPostREQUEST */
