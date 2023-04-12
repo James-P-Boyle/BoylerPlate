@@ -15,7 +15,7 @@
                 title="{{ $post->title }}"
             >
         </div>
-        <div class="bg-white flex flex-col justify-start p-6">
+        <div class="bg-white flex flex-col justify-start px-2 py-4 sm:py-6 sm:px-4">
             <div>
                 @foreach($post->tags as $tag)
                     <a

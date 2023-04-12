@@ -1,6 +1,6 @@
 <x-home-layout>
 
-    <div class="bg-white dark:bg-gray-800 flex flex-col w-full gap-4 p-6 border ">
+    <div class="bg-white dark:bg-gray-800 flex flex-col w-full gap-4 px-2 py-4 sm:py-6 sm:px-4 border ">
 
         <h1 class="text-2xl font-bold">About BOYLERPLATE</h1>
 

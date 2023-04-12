@@ -11,7 +11,7 @@
                     width="1000"
                 >
             </div>
-            <div class="bg-white dark:bg-gray-800 flex flex-col gap-2 justify-start p-6">
+            <div class="bg-white dark:bg-gray-800 flex flex-col gap-2 justify-start px-2 py-4 sm:py-6 sm:px-4">
 
                 <div class="flex flex-row gap-2">
                     @foreach($post->tags as $tag)
@@ -22,7 +22,6 @@
                         </a>
                         @endforeach
                 </div>
-
 
                 <a
                     class="text-3xl font-bold hover:text-gray-500 dark:hover:text-gray-200"

@@ -15,7 +15,7 @@
                 width="1000"
             >
         </div>
-        <div class="flex flex-col gap-2 justify-start p-6 dark:bg-gray-800 bg-white">
+        <div class="flex flex-col gap-2 justify-start px-2 py-4 sm:py-6 sm:px-4 dark:bg-gray-800 bg-white">
             <div class="flex gap-2">
                 @foreach($post->tags as $tag)
                     <a
