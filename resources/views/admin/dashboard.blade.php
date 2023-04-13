@@ -61,21 +61,22 @@
                         </span>
 
                         <div class="flex gap-2">
-                            <a
-                                href="{{ route('blog.edit', $post->id) }}"
-                                class="text-base py-1 px-2 rounded-full transition-all border-2 border-gray-400 text-gray-400 hover:border-black hover:bg-ci-yellow hover:text-white hover:scale-105"
-                                title="Edit post"
+                            <x-primary-button class="px-4">
+                                <a
+                                    href="{{ route('blog.edit', $post->id) }}"
+                                    title="Edit post"
                                 >
-                                Edit
-                            </a>
+                                    Edit
+                                </a>
+                            </x-primary-button>
 
                             <form action="{{ route('blog.destroy', $post->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
 
-                                <button class="text-base py-1 px-2 rounded-full transition-all border-2 border-gray-400 text-gray-400 hover:border-black hover:bg-ci-red hover:text-white hover:scale-105" title="Delete this post">
-                                    Delete
-                                </button>
+                                <x-danger-button>
+                                    delete
+                                </x-danger-button>
                             </form>
                         </div>
 

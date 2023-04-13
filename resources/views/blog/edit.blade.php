@@ -1,10 +1,12 @@
 <x-app-layout>
 
-    <x-page-header :title="'Edit Post'" />
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            {{ __('Edit Post') }}
+        </h2>
+    </x-slot>
 
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-
-
 
         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-4 text-gray-900 dark:text-gray-100">
@@ -18,8 +20,6 @@
                         @method('PATCH')
 
                         {{-- {{ var_dump($errors) }} --}}
-
-                        {{--  --}}
 
                         <div class="">
                             <label for="is_published">Is published</label>
@@ -37,68 +37,56 @@
                                     type="text"
                                     name="tags"
                                     value="{{ $tag->name }}"
-                                    class="inline-block bg-ci-red w-20 rounded-full text-center text-lg font-semibold text-gray-700 mr-2 mb-2 hover:bg-gray-400 transition-all"
+                                    class="bg-ci-red rounded-full text-center text-lg font-semibold text-gray-700 mr-2 mb-2 focus:border-ci-yellow focus:ring-0 focus:outline-none focus:ring-offset-0 transition-all"
                                 />
                             @endforeach
                         </div>
 
-                        <input
-                            type="text"
+                        <x-text-input
                             name="title"
                             value="{{ $post->title }}"
-                            class="p-1 bg-transparent text-xl border-b rounded-lg px-2"
-                        >
-
-                        <input
                             type="text"
+                        />
+
+                        <x-text-input
                             name="excerpt"
                             value="{{ $post->excerpt }}"
-                            class="p-1 bg-transparent text-xl border-b rounded-lg px-2"
-                        >
-
-                        <input
-                            type="number"
-                            name="min_to_read"
-                            value="{{ $post->min_to_read }}"
-                            class="p-1 bg-transparent text-xl border-b rounded-lg px-2"
-                        >
-
-                        <textarea
-                            name="body"
-                            rows="15"
-                            class="p-1 bg-transparent text-xl border-b rounded-lg px-2 h-full"
-                        >{{ $post->body }}</textarea>
-
-                        <input
                             type="text"
+                        />
+
+                        <x-text-input
+                            name="number"
+                            value="{{ $post->min_to_read }}"
+                            type="number"
+                        />
+
+                        <x-text-area
+                            name="body"
+                            value="{{ $post->body }}"
+                            rows="12"
+                        />
+
+                        <x-text-input
                             name="meta_title"
                             value="{{ optional($post->metaData)->meta_title }}"
-                            class="border-b rounded-lg px-2 bg-transparent text-xl"
-                        >
+                            type="text"/>
 
-                        <textarea
+                        <x-text-area
                             name="meta_description"
                             rows="2"
-                            class="px-2 bg-transparent text-left text-xl border rounded-lg"
-                        >{{ optional($post->metaData)->meta_description }}</textarea>
+                            value="{{ optional($post->metaData)->meta_description }}"
+                        />
 
-                        <div class="border rounded-lg p-3">
-                            <label class="flex flex-col items-start gap-2 rounded-lg cursor-pointer">
-                                <span class="text-gray-500 text-xl">
-                                    Select a file
-                                </span>
-                                <input
-                                    type="file"
-                                    name="image_path"
-                                    class="">
-                            </label>
+                        <div class="border border-gray-500 rounded-lg p-3">
+                            <input
+                                type="file"
+                                name="image_path"
+                            />
                         </div>
 
-                        <button
-                            type="submit"
-                            class="bg-ci-yellow text-white text-md font-bold py-4 rounded-lg hover:bg-ci-yellow transition-colors">
+                        <x-primary-button>
                             Submit Post
-                        </button>
+                        </x-primary-button>
                     </form>
                 </div>
             </div>

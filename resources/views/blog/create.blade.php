@@ -8,7 +8,6 @@
 
     <x-dash-content-layout>
 
-
         <div class="mt-4">
             <form
                 action={{ route('blog.store') }}
@@ -29,48 +28,46 @@
                     >
                 </div>
 
-                <input
+                <x-text-input
                     type="text"
                     name="tags"
                     id="tags"
                     placeholder="Tags separated by commas"
                     value="{{ old('tags') }}"
-                    class="border-b rounded-lg px-2 bg-transparent text-xl"
-                >
+                />
+
                 @error('tags')
                     <div class="text-ci-red text-sm">{{ $message }}</div>
                 @enderror
 
-                <input
+                <x-text-input
                     type="text"
                     name="title"
                     placeholder="Title..."
                     value="{{ old('title') }}"
-                    class="border-b rounded-lg px-2 bg-transparent text-xl"
-                >
+                />
+
                 @error('title')
                     <div class="text-ci-red text-sm">{{ $message }}</div>
                 @enderror
 
-                <input
+                <x-text-input
                     type="text"
                     name="excerpt"
                     placeholder="Excerpt..."
                     value="{{ old('excerpt') }}"
-                    class="border-b rounded-lg px-2 bg-transparent text-xl"
-                >
+                />
 
                 @error('excerpt')
                     <div class="text-ci-red text-sm">{{ $message }}</div>
                 @enderror
 
-                <input
+                <x-text-input
                     type="number"
                     name="min_to_read"
                     placeholder="Minutes to read..."
                     value="{{ old('min_to_read') }}"
-                    class="border-b rounded-lg px-2 bg-transparent text-xl"
-                >
+                />
 
                 @error('min_to_read')
                     <div class="text-ci-red text-sm">{{ $message }}</div>
@@ -88,38 +85,30 @@
                     <div class="text-ci-red text-sm">{{ $message }}</div>
                 @enderror
 
-                <input
+                <x-text-input
                     type="text"
                     name="meta_title"
                     placeholder="Optional Meta Title ?"
                     value="{{ old('meta_title') }}"
-                    class="border-b rounded-lg px-2 bg-transparent text-xl"
-                >
+                />
 
-                <textarea
+                <x-text-area
                     name="meta_description"
                     placeholder="Optional Meta Description ?"
                     rows="2"
-                    class="px-2 bg-transparent text-left text-xl border rounded-lg"
-                >{{ old('meta_description') }}</textarea>
+                    value="{{ old('meta_description') }}"
+                />
 
                 <div class="border rounded-lg p-3">
-                    <label class="flex flex-col items-start gap-2 rounded-lg cursor-pointer">
-                        <span class="text-gray-500 text-xl">
-                            Select a file
-                        </span>
-                        <input
-                            type="file"
-                            name="image"
-                            class="">
-                    </label>
+                    <input
+                        type="file"
+                        name="image"
+                    />
                 </div>
 
-                <button
-                    type="submit"
-                    class="bg-ci-yellow text-white text-lg font-bold py-4 rounded-lg hover:bg-ci-yellow transition-colors">
+                <x-primary-button>
                     Submit Post
-                </button>
+                </x-primary-button>
             </form>
         </div>
     </x-dash-content-layout>
