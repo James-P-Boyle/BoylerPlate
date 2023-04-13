@@ -7,6 +7,7 @@ use App\Models\Post;
 use App\Models\Metadata;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Services\CloudinaryUploader;
 use Intervention\Image\Facades\Image;
 use App\Http\Requests\PostFormRequest;
 
@@ -118,21 +119,11 @@ class PostsController extends Controller
         return redirect(route('dashboard.index'))->with('message', 'Post has been deleted');
     }
 
-    private function storeImage($request)
+    private function storeImage($request): String
     {
         $image = $request->file('image');
 
-        $newImageName = uniqid() . '-' . $request->title . '.' . $image->getClientOriginalExtension();
-
-        $img = Image::make($image->path());
-
-        $img->fit(900, 440, function($constraint) {
-            $constraint->aspectRatio();
-            $constraint->upsize();
-        });
-
-        $img->save(public_path('images/' . $newImageName), 75);
-
-        return $newImageName;
+        $uploader = new CloudinaryUploader();
+        return $uploader->upload($image);
     }
 }

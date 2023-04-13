@@ -5,8 +5,9 @@
             <!-- Article Image -->
             <div class="hover:opacity-75">
                 <img
-                    src="https://source.unsplash.com/collection/1346951/1000x500?sig=1"
+                    src="{{ $post->image_path }}"
                     title="{{ $post->title }}"
+                    alt="{{ $post->title }}"
                     height="500"
                     width="1000"
                 >

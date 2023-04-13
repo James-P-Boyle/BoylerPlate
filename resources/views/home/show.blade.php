@@ -10,7 +10,9 @@
             <img
                 class="mx-auto "
                 title="{{ $post->title }}"
-                src="https://source.unsplash.com/collection/1346951/1000x500?sig=1"
+                alt="{{ $post->title }}"
+                src="{{ $post->image_path }}"
+
                 height="500"
                 width="1000"
             >
