@@ -72,7 +72,7 @@
                         <input
                             type="text"
                             name="meta_title"
-                            value="{{ $post->metaData->meta_title }}"
+                            value="{{ optional($post->metaData)->meta_title }}"
                             class="border-b rounded-lg px-2 bg-transparent text-xl"
                         >
 
@@ -80,7 +80,7 @@
                             name="meta_description"
                             rows="2"
                             class="px-2 bg-transparent text-left text-xl border rounded-lg"
-                        >{{ $post->metaData->meta_description }}</textarea>
+                        >{{ optional($post->metaData)->meta_description }}</textarea>
 
                         <div class="border rounded-lg p-3">
                             <label class="flex flex-col items-start gap-2 rounded-lg cursor-pointer">

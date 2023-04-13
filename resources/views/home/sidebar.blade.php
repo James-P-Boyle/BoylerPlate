@@ -1,4 +1,4 @@
-<aside class="w-full md:w-1/3 dark:text-white">
+<aside class="w-full md:max-w-xs lg:max-w-sm dark:text-white">
 
     <div class="flex flex-col gap-4 items-center md:sticky top-4">
 
