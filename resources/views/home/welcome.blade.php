@@ -43,13 +43,16 @@
                 <div class="relative">
                     <p>{!! Str::limit($post->body, 800) !!}</p>
                     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white dark:to-gray-800"></div>
-                    <a
-                        href="{{ route('home.show', $post->id) }}"
-                        class="text-center uppercase font-bold border-r border-b-2 border-ci-yellow py-2 rounded-md text-gray-800 dark:text-white absolute bottom-0 right-0 left-0 bg-ci-yellow dark:bg-gray-900/90 hover:scale-105 transition-all drop-shadow-lg"
-                        title="view full post"
-                    >
-                        Continue Reading
-                    </a>
+
+                    <x-secondary-button>
+                        <a
+                            href="{{ route('home.show', $post->id) }}"
+                            title="view full post"
+                        >
+                            Continue Reading
+                        </a>
+                    </x-secondary-button>
+
                 </div>
 
             </div>
