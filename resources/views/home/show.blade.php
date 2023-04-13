@@ -18,13 +18,13 @@
         <div class="flex flex-col gap-2 justify-start px-2 py-4 sm:py-6 sm:px-4 dark:bg-gray-800 bg-white">
             <div class="flex gap-2">
                 @foreach($post->tags as $tag)
-                    <a
-                        href="{{ route('blog.index', ['tag' => $tag->name]) }}"
+                    <span
+                        {{-- href="{{ route('blog.index', ['tag' => $tag->name]) }}" --}}
                         class="text-ci-red text-md font-bold uppercase transition-all"
                         tilte="View more {{ $tag->name }} posts"
                     >
                         {{ $tag->name }}
-                    </a>
+                    </span>
                 @endforeach
             </div>
 
@@ -42,7 +42,7 @@
 
             <h2 class="text-2xl italic">{{ $post->excerpt }}</h2>
 
-            <div>
+            <div class="max-w-full flex flex-col gap-2 flex-wrap">
                 {!! $post->body !!}
             </div>
 

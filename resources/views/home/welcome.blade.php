@@ -15,11 +15,11 @@
 
                 <div class="flex flex-row gap-2">
                     @foreach($post->tags as $tag)
-                        <a
-                            href="{{ route('blog.index', ['tag' => $tag->name]) }}"
+                        <span
+                            {{-- href="{{ route('blog.index', ['tag' => $tag->name]) }}" --}}
                             class="text-ci-red text-lg font-bold uppercase rounded-full hover:scale-105 transition-all">
                             {{ $tag->name }}
-                        </a>
+                        </span>
                         @endforeach
                 </div>
 
